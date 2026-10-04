@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Threshing Quiz | Which Dragon Bonds With You? - Fourth Wing Quiz</title>
+  <meta name="description" content="Step into the Vale at Threshing. Take the free interactive Fourth Wing dragon bonding and signet quiz. Instant results, custom rider relic certificates, no sign up required.">
+  <meta name="keywords" content="threshing quiz, fourth wing quiz, threshing day quiz, signet quiz, fourth wing dragon quiz, buzzfeed fourth wing quiz, dragonkind game, threshing day game">
+  
+  <link rel="canonical" href="https://threshingquiz.com/">
+  <meta property="og:title" content="Threshing Quiz: Discover Your Bonded Dragon & Signet">
+  <meta property="og:description" content="Step into the Vale. Will a dragon bond you, or will you burn? Take the interactive Threshing Quiz now! Free, no sign-up.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://threshingquiz.com">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐉</text></svg>">
+  
+  <!-- Structured Data JSON-LD for Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://threshingquiz.com/#site",
+        "name": "Threshing Quiz",
+        "url": "https://threshingquiz.com/"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Threshing Quiz: Dragon Bonding & Signet Simulator",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the Threshing Quiz?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Threshing Quiz is a free, interactive dragon bonding experience set in the world of Rebecca Yarros's Fourth Wing and The Empyrean series. It tests your soul to discover which dragon breed bonds with you and what signet power you awaken."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to sign up or wait for a cooldown timer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Unlike the official Dragonkind game which enforces email signups and 4-minute wait timers after being burned, ThreshingQuiz.com is 100% free with instant retries and zero waiting."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is my dragon and signet determined?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Your choices during the trial test courage, cunning, ruthlessness, and empathy. Your primary temperament determines your dragon breed and color, while your core instinct manifests your unique signet ability."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I save and share my Rider Certificate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Upon completing the quiz, an official Basgiath War College certificate is rendered live with your custom cadet name, ready for instant download and sharing on TikTok, Instagram, and Reddit."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Cinzel+Decorative:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Atmospheric Embers -->
+  <canvas id="ambientCanvas"></canvas>
+
+  <div class="site-wrapper">
+    <!-- Live Vale Broadcast Ticker -->
+    <div class="vale-ticker-bar">
+      <div class="ticker-content">
+        <span class="pulse-indicator"></span>
+        <span class="ticker-badge">LIVE FROM THE VALE</span>
+        <span id="tickerBroadcastText" class="ticker-text">A Cadet has bonded with a Black Daggertail in the high peaks!</span>
+      </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+      <div class="header-content">
+        <a href="#" class="brand-logo" onclick="resetToHome()">
+          <span class="dragon-glyph">⚔️</span>
+          <div class="logo-text">
+            <span class="brand-title">THRESHING QUIZ</span>
+            <span class="brand-sub">BASGIATH WAR COLLEGE</span>
+          </div>
+        </a>
+        <nav class="quiz-nav">
+          <button class="nav-btn active" data-quiz="dragon">🐉 Dragon Bond</button>
+          <button class="nav-btn" data-quiz="signet">⚡ Signet Relic</button>
+          <button class="nav-btn" data-quiz="quadrant">🛡️ Quadrant</button>
+          <a href="#codex" class="nav-btn nav-link-btn">📖 Dragon Lore</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Flow -->
+    <main class="main-content">
+      <!-- 1. HERO SECTION -->
+      <section id="heroSection" class="hero-section active">
+        <div class="ancient-border-box">
+          <div class="corner-ornament top-left"></div>
+          <div class="corner-ornament top-right"></div>
+          <div class="corner-ornament bottom-left"></div>
+          <div class="corner-ornament bottom-right"></div>
+
+          <div class="hero-badge">THE EMPYREAN INTERACTIVE TRIAL • NO SIGN UP</div>
+          <h1 class="hero-title">WILL YOU BOND, OR WILL YOU BURN?</h1>
+          <p class="hero-quote">
+            "A dragon without its rider is a tragedy. A rider without their dragon is dead."
+          </p>
+          <p class="hero-description">
+            The flight line is drawn. Thousands of cadets enter the Vale, but only those possessing true courage and unyielding resolve will be chosen. Step forward into the proving grounds to discover your bonded dragon, ancient breed, and awakened signet.
+          </p>
+
+          <!-- Quiz Selector Cards -->
+          <div class="quiz-select-grid">
+            <div class="quiz-card featured" onclick="startSelectedQuiz('dragon')">
+              <div class="card-icon">🐉</div>
+              <div class="card-tag">FLAGSHIP TRIAL</div>
+              <h3>The Threshing Dragon Bond</h3>
+              <p>Enter the Vale, face mortal peril, and find out which dragon species and legend will bind to your soul.</p>
+              <button class="action-btn primary-gold">Enter the Vale <span>→</span></button>
+            </div>
+
+            <div class="quiz-card" onclick="startSelectedQuiz('signet')">
+              <div class="card-icon">⚡</div>
+              <div class="card-tag">RELIC AWAKENING</div>
+              <h3>Awakened Signet Quiz</h3>
+              <p>Signets reveal who you truly are at your core. Will you command lightning, weave shadows, or hear forbidden thoughts?</p>
+              <button class="action-btn secondary-btn">Discover Signet <span>→</span></button>
+            </div>
+
+            <div class="quiz-card" onclick="startSelectedQuiz('quadrant')">
+              <div class="card-icon">🛡️</div>
+              <div class="card-tag">CADET PLACEMENT</div>
+              <h3>Basgiath Quadrant Quiz</h3>
+              <p>Are you destined for the lethal Riders, the scholarly Scribes, the stalwart Healers, or Infantry?</p>
+              <button class="action-btn secondary-btn">Determine Path <span>→</span></button>
+            </div>
+          </div>
+
+          <div class="hero-features">
+            <div class="feat-item"><span>✦</span> 100% Free & No Sign-up</div>
+            <div class="feat-item"><span>✦</span> No 4-Minute Wait Timer / Instant Retry</div>
+            <div class="feat-item"><span>✦</span> Custom Cadet Name Certificate</div>
+            <div class="feat-item"><span>✦</span> Lore-Accurate Empyrean System</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. QUIZ PLAY SECTION -->
+      <section id="quizPlaySection" class="quiz-play-section">
+        <div class="quiz-box ancient-border-box">
+          <div class="corner-ornament top-left"></div>
+          <div class="corner-ornament top-right"></div>
+          <div class="corner-ornament bottom-left"></div>
+          <div class="corner-ornament bottom-right"></div>
+
+          <div class="quiz-status-bar">
+            <div class="quiz-name-indicator" id="currentQuizLabel">The Threshing Trial</div>
+            <div class="step-count">Question <span id="currentStepNum">1</span> / <span id="totalStepNum">8</span></div>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progressBar"></div>
+          </div>
+
+          <div class="question-wrapper">
+            <h2 class="question-text" id="questionTitle">Loading question...</h2>
+            <div class="answers-container" id="answersGrid">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. RITUAL CALCULATING -->
+      <section id="calculatingSection" class="calculating-section">
+        <div class="rune-ritual-loader">
+          <div class="rune-circle"></div>
+          <div class="dragon-eye">👁️</div>
+        </div>
+        <h2 class="ritual-title">THE DRAGONS ARE JUDGING YOUR SOUL...</h2>
+        <p class="ritual-sub">Listening to the heartbeat of the Vale</p>
+      </section>
+
+      <!-- 4. RESULT SHOWCASE WITH CUSTOM CADET NAME -->
+      <section id="resultSection" class="result-section">
+        <div class="result-box ancient-border-box">
+          <div class="corner-ornament top-left"></div>
+          <div class="corner-ornament top-right"></div>
+          <div class="corner-ornament bottom-left"></div>
+          <div class="corner-ornament bottom-right"></div>
+
+          <div class="result-header">
+            <div class="result-subtitle">BASGIATH WAR COLLEGE • RECORD OF BOND</div>
+            <h1 class="result-main-title" id="resultTitle">TAIRN • BLACK DAGGERTAIL</h1>
+            <div class="result-dragon-class" id="resultSubtitle">The Fiercest Dragon of the Continent</div>
+          </div>
+
+          <!-- Name Customizer -->
+          <div class="cadet-customizer">
+            <label for="cadetNameInput">ENTER YOUR CADET NAME ON THE RECORD:</label>
+            <div class="customizer-row">
+              <input type="text" id="cadetNameInput" placeholder="e.g. Violet Sorrengail" maxlength="30" value="First Year Cadet">
+              <button class="action-btn secondary-btn" id="updateCertNameBtn">✍️ Stamp Name</button>
+            </div>
+          </div>
+
+          <!-- Canvas Certificate Container -->
+          <div class="certificate-container">
+            <canvas id="certificateCanvas" width="800" height="520"></canvas>
+            <div class="cert-actions">
+              <button class="action-btn primary-gold" id="downloadCertBtn">📥 Download High-Res Certificate</button>
+              <button class="action-btn secondary-btn" id="copyShareBtn">📋 Copy Shareable Link</button>
+            </div>
+            <div id="copySuccessMsg" class="copy-alert">Copied to clipboard! Share your bond to TikTok, Instagram, or Reddit!</div>
+          </div>
+
+          <!-- Lore & Stats Breakdown -->
+          <div class="lore-breakdown">
+            <div class="lore-block quote-block">
+              <p class="quote-text" id="resultQuote">"I do not answer to human customs. But you, cadet... you do not shatter."</p>
+            </div>
+
+            <div class="lore-block traits-block">
+              <h3>⚡ Cadet Soul Signature & Bond Lore</h3>
+              <p id="resultDesc">Deep analysis of traits and bonding lore...</p>
+            </div>
+
+            <div class="lore-stats-grid" id="resultStatsGrid">
+              <!-- Dynamically populated stats -->
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="post-result-actions">
+            <button class="action-btn secondary-btn" onclick="retakeCurrentQuiz()">🔄 Retake Trial</button>
+            <button class="action-btn primary-gold" onclick="switchQuizFromResults()">⚔️ Take Next Quiz</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. COMPREHENSIVE LORE CODEX (SEO & Content Anchor) -->
+      <section id="codex" class="codex-section">
+        <div class="ancient-border-box">
+          <div class="corner-ornament top-left"></div>
+          <div class="corner-ornament top-right"></div>
+          <div class="corner-ornament bottom-left"></div>
+          <div class="corner-ornament bottom-right"></div>
+
+          <div class="sec-head">
+            <div class="hero-badge">THE EMPYREAN CODEX</div>
+            <h2 class="section-title">DRAGON BREEDS, COLORS & TAIL TYPES</h2>
+            <p class="section-intro">
+              In the lore of <em>Fourth Wing</em> and <em>Iron Flame</em>, dragons are not pets; they are sentient, ruthless deities. A dragon’s color reflects their temperament, while their tail indicates their lethal combat disposition.
+            </p>
+          </div>
+
+          <!-- Color Grid -->
+          <div class="codex-subhead">
+            <h3>✦ The Six Sacred Dragon Colors</h3>
+          </div>
+          <div class="dragon-colors-grid">
+            <div class="color-card" style="--card-accent: #6a6480;">
+              <div class="color-dot black-dot"></div>
+              <h4>Black Dragons</h4>
+              <span class="rarity-badge legendary">Apex Legendary</span>
+              <p>The rarest, largest, and most formidable dragons in Navarre (e.g. Tairn). Known for devastating physical power and unyielding moral conviction.</p>
+            </div>
+
+            <div class="color-card" style="--card-accent: #2f5fb3;">
+              <div class="color-dot blue-dot"></div>
+              <h4>Blue Dragons</h4>
+              <span class="rarity-badge rare">Rare Sovereign</span>
+              <p>Ruthless, fiercely intelligent, and exceedingly selective (e.g. Sgaeyl). They choose riders with sharp, unapologetic lethal instincts.</p>
+            </div>
+
+            <div class="color-card" style="--card-accent: #3f8f4e;">
+              <div class="color-dot green-dot"></div>
+              <h4>Green Dragons</h4>
+              <span class="rarity-badge uncommon">Calculated Vanguard</span>
+              <p>The strategists of the skies (e.g. Feirge). Green dragons value logic, tactical patience, and unshakeable discipline in battle.</p>
+            </div>
+
+            <div class="color-card" style="--card-accent: #c8372d;">
+              <div class="color-dot red-dot"></div>
+              <h4>Red Dragons</h4>
+              <span class="rarity-badge common">Fierce Destroyer</span>
+              <p>Fiery, quick-tempered, and aggressive front-line brawlers. Red dragons bond with warriors who charge headfirst into conflict.</p>
+            </div>
+
+            <div class="color-card" style="--card-accent: #e07a1f;">
+              <div class="color-dot orange-dot"></div>
+              <h4>Orange Dragons</h4>
+              <span class="rarity-badge common">Volatile & Proud</span>
+              <p>Unpredictable, proud, and hazardous to foolish cadets. Highly reactive dragons that demand dominant willpower to ride.</p>
+            </div>
+
+            <div class="color-card" style="--card-accent: #8a5a34;">
+              <div class="color-dot brown-dot"></div>
+              <h4>Brown Dragons</h4>
+              <span class="rarity-badge common">Steadfast Bastion</span>
+              <p>Calm, steady, and protective defenders. Brown dragons bond with cadets of dependable loyalty and resolute fortitude.</p>
+            </div>
+          </div>
+
+          <!-- Tail Types Grid -->
+          <div class="codex-subhead mt-large">
+            <h3>✦ The Lethal Tail Formations</h3>
+          </div>
+          <div class="tail-grid">
+            <div class="tail-card">
+              <h4>🗡️ Daggertail</h4>
+              <p>Short, razor-sharp spike forged for supersonic speed and puncturing armor.</p>
+            </div>
+            <div class="tail-card">
+              <h4>⚔️ Swordtail</h4>
+              <p>Extended serrated bone blade capable of cleaving multiple attackers in wide sweeps.</p>
+            </div>
+            <div class="tail-card">
+              <h4>🔨 Clubtail</h4>
+              <p>Solid, high-density bone mass designed to shatter shields, bones, and fortifications.</p>
+            </div>
+            <div class="tail-card">
+              <h4>🦂 Scorpiontail</h4>
+              <p>Curved piercing stinger that strikes from above, delivering fatal punctures.</p>
+            </div>
+            <div class="tail-card">
+              <h4>⭐ Morningstartail</h4>
+              <p>Extremely rare spiked mace of bone; strikes with devastating concussive and piercing force.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. COMPREHENSIVE FAQ SECTION (Capturing Google Search Intent) -->
+      <section class="faq-section">
+        <div class="ancient-border-box">
+          <div class="corner-ornament top-left"></div>
+          <div class="corner-ornament top-right"></div>
+          <div class="corner-ornament bottom-left"></div>
+          <div class="corner-ornament bottom-right"></div>
+
+          <div class="sec-head">
+            <div class="hero-badge">FREQUENTLY ASKED QUESTIONS</div>
+            <h2 class="section-title">THRESHING & DRAGONKIND GUIDE</h2>
+          </div>
+
+          <div class="faq-accordion">
+            <details class="faq-item" open>
+              <summary>What is Threshing in Fourth Wing?</summary>
+              <div class="faq-answer">
+                <p>Threshing is the pivotal trial where first-year cadets at the Basgiath War College enter the Vale to stand before wild dragons. Dragons choose cadets based on their inner strength and courage. Those who are deemed unworthy or act cowardly are incinerated on the spot.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>How is this different from the official Dragonkind game?</summary>
+              <div class="faq-answer">
+                <p>The official Dragonkind website requires an email account and enforces a 4:00 wait timer every time a dragon burns you. <strong>ThreshingQuiz.com</strong> is a fast, fan-crafted tribute that requires <strong>no sign-up, has zero cooldown wait times</strong>, and provides high-resolution downloadable certificates.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Why do dragons burn cadets in Threshing?</summary>
+              <div class="faq-answer">
+                <p>Dragons despise hesitation, weakness, and deceit. If a cadet flinches, shows terror, or tries to approach a dragon with false pride, the dragon will execute them immediately with dragonfire. In our simulator, if you burn, you can retry instantly without penalty.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>What is a Signet power and when does it appear?</summary>
+              <div class="faq-answer">
+                <p>A signet is a magical ability channeled through the bond between a rider and their dragon. It reflects the rider’s deepest subconscious nature and soul. Common signets include wielding lightning, manipulating shadows, foresight, and ice/fire manipulation.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#" onclick="resetToHome()">Home</a> •
+          <a href="#codex">Dragon Codex</a> •
+          <a href="https://dragonkind.com" target="_blank" rel="noopener">Official Dragonkind ↗</a> •
+          <a href="https://threshingday.com" target="_blank" rel="noopener">Official Book Site ↗</a>
+        </div>
+        <p class="disclaimer-text">
+          <strong>DISCLAIMER:</strong> ThreshingQuiz.com is an unofficial, independent fan-created interactive experience inspired by <em>The Empyrean</em> series (Fourth Wing, Iron Flame) created by Rebecca Yarros and published by Red Tower Books / Entangled Publishing. All names, lore, and characters belong to their respective copyright holders.
+        </p>
+        <p class="copyright-sub">ThreshingQuiz.com • Free & Open to All Cadets Worldwide</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="quizzes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
