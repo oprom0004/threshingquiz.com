@@ -154,18 +154,21 @@ body {
 
 .quiz-nav {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.6rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .nav-btn {
-  background: transparent;
+  background: rgba(18, 22, 31, 0.6);
   border: 1px solid var(--border-gold-subtle);
   color: var(--text-muted);
-  padding: 0.45rem 0.9rem;
-  font-size: 0.82rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.8rem;
   font-family: var(--font-serif);
   font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   cursor: pointer;
   border-radius: 4px;
   transition: all 0.25s ease;
@@ -177,8 +180,8 @@ body {
 .nav-btn:hover, .nav-btn.active {
   border-color: var(--border-gold);
   color: #fff;
-  background: rgba(201, 167, 88, 0.15);
-  box-shadow: 0 0 10px var(--gold-glow);
+  background: rgba(201, 167, 88, 0.16);
+  box-shadow: 0 0 12px var(--gold-glow);
 }
 
 /* Main Content Area */
@@ -748,65 +751,63 @@ body {
 /* Dragon Colors Grid */
 .dragon-colors-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.5rem;
 }
 
 .color-card {
   background: var(--bg-card);
   border: 1px solid var(--border-gold-subtle);
-  border-left: 4px solid var(--card-accent, var(--border-gold));
   border-radius: 6px;
-  padding: 1.4rem;
-  transition: transform 0.2s ease;
+  padding: 1.6rem 1.4rem;
+  transition: all 0.25s ease;
+  position: relative;
 }
 
 .color-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  border-color: var(--border-gold);
   background: var(--bg-card-hover);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
 
-.color-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-bottom: 0.5rem;
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(201, 167, 88, 0.18);
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.85rem;
 }
-.black-dot { background: #6a6480; box-shadow: 0 0 8px #6a6480; }
-.blue-dot { background: #2f5fb3; box-shadow: 0 0 8px #2f5fb3; }
-.green-dot { background: #3f8f4e; box-shadow: 0 0 8px #3f8f4e; }
-.red-dot { background: #c8372d; box-shadow: 0 0 8px #c8372d; }
-.orange-dot { background: #e07a1f; box-shadow: 0 0 8px #e07a1f; }
-.brown-dot { background: #8a5a34; box-shadow: 0 0 8px #8a5a34; }
 
 .color-card h4 {
   font-family: var(--font-serif);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: #fff;
-  margin-bottom: 0.3rem;
+  letter-spacing: 0.5px;
 }
 
-.rarity-badge {
-  font-size: 0.65rem;
+.dragon-rank {
   font-family: var(--font-serif);
-  font-weight: 700;
+  font-size: 0.72rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  padding: 0.15rem 0.5rem;
-  border-radius: 12px;
-  display: inline-block;
-  margin-bottom: 0.75rem;
+  color: var(--border-gold);
+  font-weight: 700;
 }
-.rarity-badge.legendary { background: rgba(201, 167, 88, 0.25); color: #ffd700; border: 1px solid #ffd700; }
-.rarity-badge.rare { background: rgba(47, 95, 179, 0.25); color: #7cb3ff; border: 1px solid #7cb3ff; }
-.rarity-badge.uncommon { background: rgba(63, 143, 78, 0.25); color: #6be384; border: 1px solid #6be384; }
-.rarity-badge.common { background: rgba(255, 255, 255, 0.08); color: var(--text-muted); border: 1px solid var(--border-gold-subtle); }
+
+/* Subtle custom accent headers */
+.black-dragon h4 { color: #d5d3e0; }
+.blue-dragon h4 { color: #8bb8ff; }
+.green-dragon h4 { color: #7de895; }
+.red-dragon h4 { color: #ff7d70; }
+.orange-dragon h4 { color: #ffad66; }
+.brown-dragon h4 { color: #dfb288; }
 
 .color-card p {
   color: var(--text-muted);
-  font-size: 0.88rem;
-  line-height: 1.5;
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 /* Tail Grid */

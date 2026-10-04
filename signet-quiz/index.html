@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signet Quiz | What is Your Fourth Wing Relic Ability? - Threshing Quiz</title>
+  <meta name="description" content="Discover your awakened Fourth Wing signet power. Are you a Lightning Wielder, Shadow Wielder, Inntinnsic, or Battle Foreseer? Free interactive quiz, instant rider certificate.">
+  <meta name="keywords" content="signet quiz, fourth wing signet quiz, signet quiz fourth wing, what is my signet, threshing quiz signet, fourth wing quiz">
+  
+  <link rel="canonical" href="https://threshingquiz.com/signet-quiz/">
+  <meta property="og:title" content="Signet Quiz: Discover Your Awakened Power & Relic">
+  <meta property="og:description" content="Signets reflect who you truly are at your core. What deadly magic will channel through your dragon? Take the free Signet Quiz!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://threshingquiz.com/signet-quiz/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://threshingquiz.com/signet-quiz/#page",
+        "name": "Signet Quiz: Discover Your Awakened Relic Ability",
+        "description": "An interactive lore-accurate test determining your signet ability in Navarre's Basgiath War College."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a Signet in Fourth Wing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A signet is a supernatural ability channeled by a rider through their bonded dragon's power. It manifests based on the rider's deepest personality, need, and subconscious core."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why are Inntinnsics executed in Navarre?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Inntinnsics possess the ability to read minds and thoughts. Leadership in Navarre deems them an existential security risk, ordering them executed immediately upon manifestation."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Cinzel+Decorative:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <canvas id="ambientCanvas"></canvas>
+
+  <div class="site-wrapper">
+    <!-- Live Vale Broadcast Ticker -->
+    <div class="vale-ticker-bar">
+      <div class="ticker-content">
+        <span class="pulse-indicator"></span>
+        <span class="ticker-badge">LIVE FROM THE VALE</span>
+        <span id="tickerBroadcastText" class="ticker-text">Cadet Rhiannon has manifested an awakened summoning signet!</span>
+      </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+      <div class="header-content">
+        <a href="/" class="brand-logo">
+          <span class="dragon-glyph">⚔️</span>
+          <div class="logo-text">
+            <span class="brand-title">THRESHING QUIZ</span>
+            <span class="brand-sub">BASGIATH WAR COLLEGE</span>
+          </div>
+        </a>
+        <nav class="quiz-nav">
+          <a href="/" class="nav-btn">Dragon Bond</a>
+          <a href="/signet-quiz/" class="nav-btn active">Signet Relic</a>
+          <a href="/quadrant-quiz/" class="nav-btn">Quadrant</a>
+          <a href="/dragon-codex/" class="nav-btn">Dragon Codex</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- HERO LANDING -->
+      <section id="heroSection" class="hero-section active">
+        <div class="ancient-border-box">
+          <div class="corner-ornament top-left"></div>
+          <div class="corner-ornament top-right"></div>
+          <div class="corner-ornament bottom-left"></div>
+          <div class="corner-ornament bottom-right"></div>
+
+          <div class="hero-badge">BASGIATH RELIC AWAKENING TRIAL</div>
+          <h1 class="hero-title">WHAT IS YOUR AWAKENED SIGNET?</h1>
+          <p class="hero-quote">
+            "Signets are the result of the unique chemistry between rider and the dragon and usually say more about the rider than the dragon."
+          </p>
+          <p class="hero-description">
+            Once a dragon binds to your soul, raw magic floods through your bloodstream, shaping into a lethal, unique signet power. Are you a storm-commanding Lightning Wielder, a stealthy Shadow Wielder, a battlefield prescient, or the forbidden Inntinnsic?
+          </p>
+
+          <div style="text-align: center; margin: 2rem 0;">
+            <button class="action-btn primary-gold" style="max-width: 380px; margin: 0 auto;" onclick="startSelectedQuiz('signet')">Begin Signet Trial <span>→</span></button>
+          </div>
+
+          <div class="hero-features">
+            <div class="feat-item"><span>✦</span> 5 Critical Crucible Decisions</div>
+            <div class="feat-item"><span>✦</span> Custom Cadet Relic Certificate</div>
+            <div class="feat-item"><span>✦</span> Lore-Accurate Empyrean Manifestation</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUIZ PLAY SECTION -->
+      <section id="quizPlaySection" class="quiz-play-section">
+        <div class="quiz-box ancient-border-box">
+          <div class="corner-ornament top-left"></div>
+          <div class="corner-ornament top-right"></div>
+          <div class="corner-ornament bottom-left"></div>
+          <div class="corner-ornament bottom-right"></div>
+
+          <div class="quiz-status-bar">
+            <div class="quiz-name-indicator" id="currentQuizLabel">Awakened Signet Quiz</div>
+            <div class="step-count">Question <span id="currentStepNum">1</span> / <span id="totalStepNum">5</span></div>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progressBar"></div>
+          </div>
+
+          <div class="question-wrapper">
+            <h2 class="question-text" id="questionTitle">Loading question...</h2>
+            <div class="answers-container" id="answersGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RITUAL CALCULATING -->
+      <section id="calculatingSection" class="calculating-section">
+        <div class="rune-ritual-loader">
+          <div class="rune-circle"></div>
+          <div class="dragon-eye">👁️</div>
+        </div>
+        <h2 class="ritual-title">THE DRAGON'S CHANNEL IS MANIFESTING...</h2>
+        <p class="ritual-sub">Forging the golden relic onto your skin</p>
+      </section>
+
+      <!-- RESULT SHOWCASE -->
+      <section id="resultSection" class="result-section">
+        <div class="result-box ancient-border-box">
+          <div class="corner-ornament top-left"></div>
+          <div class="corner-ornament top-right"></div>
+          <div class="corner-ornament bottom-left"></div>
+          <div class="corner-ornament bottom-right"></div>
+
+          <div class="result-header">
+            <div class="result-subtitle">BASGIATH WAR COLLEGE • RECORD OF RELIC</div>
+            <h1 class="result-main-title" id="resultTitle">LIGHTNING WIELDER</h1>
+            <div class="result-dragon-class" id="resultSubtitle">Raw Sky Dominance & Pure Energy</div>
+          </div>
+
+          <div class="cadet-customizer">
+            <label for="cadetNameInput">ENTER YOUR CADET NAME ON THE RECORD:</label>
+            <div class="customizer-row">
+              <input type="text" id="cadetNameInput" placeholder="e.g. Violet Sorrengail" maxlength="30" value="First Year Cadet">
+              <button class="action-btn secondary-btn" id="updateCertNameBtn">✍️ Stamp Name</button>
+            </div>
+          </div>
+
+          <div class="certificate-container">
+            <canvas id="certificateCanvas" width="800" height="520"></canvas>
+            <div class="cert-actions">
+              <button class="action-btn primary-gold" id="downloadCertBtn">📥 Download High-Res Certificate</button>
+              <button class="action-btn secondary-btn" id="copyShareBtn">📋 Copy Shareable Link</button>
+            </div>
+            <div id="copySuccessMsg" class="copy-alert">Copied to clipboard! Share your signet to TikTok, Instagram, or Reddit!</div>
+          </div>
+
+          <div class="lore-breakdown">
+            <div class="lore-block quote-block">
+              <p class="quote-text" id="resultQuote">"You train this ability, own it, and you will have the power to defend an entire kingdom."</p>
+            </div>
+
+            <div class="lore-block traits-block">
+              <h3>⚡ Signet Nature & Tactical Impact</h3>
+              <p id="resultDesc">Deep analysis of traits and bonding lore...</p>
+            </div>
+
+            <div class="lore-stats-grid" id="resultStatsGrid"></div>
+          </div>
+
+          <div class="post-result-actions">
+            <button class="action-btn secondary-btn" onclick="retakeCurrentQuiz()">🔄 Retake Trial</button>
+            <a href="/" class="action-btn primary-gold" style="text-decoration:none;">🐉 Take Dragon Bond Quiz</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SIGNET LORE OVERVIEW -->
+      <section class="codex-section">
+        <div class="ancient-border-box">
+          <div class="corner-ornament top-left"></div>
+          <div class="corner-ornament top-right"></div>
+          <div class="corner-ornament bottom-left"></div>
+          <div class="corner-ornament bottom-right"></div>
+
+          <div class="sec-head">
+            <div class="hero-badge">THE ARCHIVES OF NAVARRE</div>
+            <h2 class="section-title">THE PRIMARY KNOWN SIGNETS</h2>
+            <p class="section-intro">
+              According to Professor Kaori's archives, signet abilities emerge several months after Threshing once a cadet's body adapts to dragon channeling. Here are the most formidable signets documented in modern war college records.
+            </p>
+          </div>
+
+          <div class="dragon-colors-grid">
+            <div class="color-card">
+              <div class="card-header-row">
+                <h4>Lightning Wielding</h4>
+                <span class="dragon-rank">Catastrophic Class</span>
+              </div>
+              <p>Channeled by riders bonded to Black dragons (e.g. Violet Sorrengail). Pure electrical devastation that commands the heavens and penetrates wards.</p>
+            </div>
+
+            <div class="color-card">
+              <div class="card-header-row">
+                <h4>Shadow Wielding</h4>
+                <span class="dragon-rank">Lethal Apex</span>
+              </div>
+              <p>Channeled by riders bonded to Blue dragons (e.g. Xaden Riorson). Commands living darkness, physical umbral blades, and stealth surveillance.</p>
+            </div>
+
+            <div class="color-card">
+              <div class="card-header-row">
+                <h4>Inntinnsic</h4>
+                <span class="dragon-rank">Forbidden Execution</span>
+              </div>
+              <p>Riders capable of reading thoughts and subconscious intentions. Immediately executed by Navarrian military tribunals for security preservation.</p>
+            </div>
+
+            <div class="color-card">
+              <div class="card-header-row">
+                <h4>Battle Foresight</h4>
+                <span class="dragon-rank">Strategic S-Rank</span>
+              </div>
+              <p>Channeled by tactical leaders. Grants visions of combat outcomes, probability shifts, and enemy movements before they occur.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="/">Home</a> •
+          <a href="/signet-quiz/">Signet Quiz</a> •
+          <a href="/quadrant-quiz/">Quadrant Quiz</a> •
+          <a href="/dragon-codex/">Dragon Codex</a>
+        </div>
+        <p class="disclaimer-text">
+          <strong>DISCLAIMER:</strong> ThreshingQuiz.com is an unofficial, independent fan-created interactive experience inspired by <em>The Empyrean</em> series (Fourth Wing, Iron Flame) created by Rebecca Yarros and published by Red Tower Books / Entangled Publishing.
+        </p>
+        <p class="copyright-sub">ThreshingQuiz.com • Free & Open to All Cadets Worldwide</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../quizzes.js"></script>
+  <script src="../app.js"></script>
+  <script>
+    // Initialize specifically for Signet quiz on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      currentQuizType = 'signet';
+    });
+  </script>
+</body>
+</html>
