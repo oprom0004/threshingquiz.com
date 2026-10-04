@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dragonkind Game Guide & Instant Vale Simulator - Threshing Quiz</title>
+  <meta name="description" content="Complete guide to Rebecca Yarros's Dragonkind game. Learn how to survive the Vale, what to do after being burned, and play the instant retry Threshing simulator with no wait timer.">
+  <meta name="keywords" content="dragonkind game, dragonkind rebecca yarros quiz, dragonkind threshing day game, dragonkind game guide, dragonkind wait timer, threshing quiz">
+  
+  <link rel="canonical" href="https://threshingquiz.com/dragonkind-game/">
+  <meta property="og:title" content="Dragonkind Game Guide: How to Survive & Instant Vale Simulator">
+  <meta property="og:description" content="Burned on Dragonkind? Learn the mechanics, explore dragon breeds, and play the instant retry simulator while your official timer counts down.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://threshingquiz.com/dragonkind-game/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐉</text></svg>">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://threshingquiz.com/dragonkind-game/#article",
+        "headline": "Dragonkind Game Guide: How to Survive Threshing in Rebecca Yarros's Official Experience",
+        "description": "Comprehensive strategies, burn cooldown explanations, and instant fan simulator for Rebecca Yarros's Dragonkind game."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the official Dragonkind game?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dragonkind (dragonkind.com) is the official interactive Threshing experience launched by Rebecca Yarros alongside the release of the Threshing Day collection. Players enter the Vale to bond with a dragon."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why did my dragon burn me in Dragonkind?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In Empyrean lore, dragons test cadets for unbending resolve. If choices reflect hesitation, false pride, or panic, the dragon executes the cadet. Official testers report dying 3 to 4 times before successfully bonding."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the Dragonkind retry timer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The official Dragonkind website enforces a 4-minute cooldown timer after being burned. During this wait, readers can play our instant fan simulator at ThreshingQuiz.com without any wait timer or sign-up."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Cinzel+Decorative:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <canvas id="ambientCanvas"></canvas>
+
+  <div class="site-wrapper">
+    <!-- Live Vale Broadcast Ticker -->
+    <div class="vale-ticker-bar">
+      <div class="ticker-content">
+        <span class="pulse-indicator"></span>
+        <span class="ticker-badge">VALE INTELLIGENCE</span>
+        <span class="ticker-text">Official Dragonkind game launched on dragonkind.com • Instant retry simulator available below.</span>
+      </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+      <div class="header-content">
+        <a href="/" class="brand-logo">
+          <span class="dragon-glyph">⚔️</span>
+          <div class="logo-text">
+            <span class="brand-title">THRESHING QUIZ</span>
+            <span class="brand-sub">BASGIATH WAR COLLEGE</span>
+          </div>
+        </a>
+        <nav class="quiz-nav">
+          <a href="/" class="nav-btn">Dragon Bond</a>
+          <a href="/signet-quiz/" class="nav-btn">Signet Relic</a>
+          <a href="/quadrant-quiz/" class="nav-btn">Quadrant</a>
+          <a href="/dragonkind-game/" class="nav-btn active">Dragonkind Guide</a>
+          <a href="/dragon-codex/" class="nav-btn">Dragon Codex</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="codex-section">
+        <div class="ancient-border-box">
+          <div class="corner-ornament top-left"></div>
+          <div class="corner-ornament top-right"></div>
+          <div class="corner-ornament bottom-left"></div>
+          <div class="corner-ornament bottom-right"></div>
+
+          <div class="sec-head">
+            <div class="hero-badge">THE COMPLETE COMPANION & WALKTHROUGH</div>
+            <h1 class="section-title">DRAGONKIND GAME & THRESHING GUIDE</h1>
+            <p class="section-intro">
+              Everything you need to know about Rebecca Yarros’s official <em>Dragonkind</em> interactive game, how the Vale trial works, and how to survive the dragon selection.
+            </p>
+          </div>
+
+          <!-- Quick Comparison Table -->
+          <div class="codex-subhead">
+            <h3>✦ Official Dragonkind vs. ThreshingQuiz Simulator</h3>
+          </div>
+          <div class="tail-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 2.5rem;">
+            <div class="tail-card" style="text-align: left; padding: 1.5rem;">
+              <h4 style="color: var(--border-gold); font-size: 1.1rem; margin-bottom: 0.8rem;">Official Dragonkind Game</h4>
+              <p>• <strong>Platform:</strong> dragonkind.com (by Rebecca Yarros)</p>
+              <p>• <strong>Access:</strong> Requires email registration & account creation</p>
+              <p>• <strong>Mechanics:</strong> Assigned Wing/Squad, high burn mortality</p>
+              <p>• <strong>Burn Penalty:</strong> Enforces a 4-minute wait cooldown before retrying</p>
+              <p>• <strong>Result:</strong> Official dragon name and book lineage</p>
+            </div>
+
+            <div class="tail-card" style="text-align: left; padding: 1.5rem; border-color: var(--border-gold);">
+              <h4 style="color: #fff; font-size: 1.1rem; margin-bottom: 0.8rem;">ThreshingQuiz Instant Simulator</h4>
+              <p>• <strong>Platform:</strong> threshingquiz.com (Fan Experience)</p>
+              <p>• <strong>Access:</strong> 100% Free, Zero Sign-up, No Email</p>
+              <p>• <strong>Mechanics:</strong> 3-in-1 Trials (Dragon Bond + Signet + Quadrant)</p>
+              <p>• <strong>Burn Penalty:</strong> Instant Retry (0 seconds cooldown)</p>
+              <p>• <strong>Result:</strong> Custom stamped high-res certificate for TikTok / IG</p>
+            </div>
+          </div>
+
+          <!-- Strategy Breakdown -->
+          <div class="codex-subhead">
+            <h3>✦ How to Survive Threshing: 4 Golden Rules</h3>
+          </div>
+          <div class="dragon-colors-grid">
+            <div class="color-card">
+              <div class="card-header-row">
+                <h4>1. Never Flinch</h4>
+                <span class="dragon-rank">Core Rule</span>
+              </div>
+              <p>Dragons respect unyielding resolve. When facing an apex predator in the Vale, turning your back or ducking in panic will result in immediate incineration.</p>
+            </div>
+
+            <div class="color-card">
+              <div class="card-header-row">
+                <h4>2. Match Temperaments</h4>
+                <span class="dragon-rank">Bond Affinity</span>
+              </div>
+              <p>Black dragons seek unshakable moral courage. Blue dragons demand ruthless lethality. Green dragons honor tactical logic. Choose actions reflecting who you truly are.</p>
+            </div>
+
+            <div class="color-card">
+              <div class="card-header-row">
+                <h4>3. Respect the Feathertails</h4>
+                <span class="dragon-rank">Ancient Lore</span>
+              </div>
+              <p>Small or young dragons (like Andarna in her youth) are fiercely protected by the Empyrean. Defending them from ruthless cadets earns ancestral respect.</p>
+            </div>
+
+            <div class="color-card">
+              <div class="card-header-row">
+                <h4>4. Expect Multiple Deaths</h4>
+                <span class="dragon-rank">Patience</span>
+              </div>
+              <p>The Vale is dangerous by design. More than 70% of cadets perish on their first attempts. If burned, learn from the error and step forward again.</p>
+            </div>
+          </div>
+
+          <!-- Embedded Action Hero -->
+          <div style="text-align: center; margin-top: 3.5rem; padding: 2.5rem 1.5rem; background: var(--bg-card); border: 1px solid var(--border-gold-subtle); border-radius: 6px;">
+            <h2 style="font-family: var(--font-decorative); color: #fff; font-size: 1.7rem; margin-bottom: 0.75rem;">WAITING FOR THE 4-MINUTE DRAGONKIND TIMER?</h2>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem;">
+              Do not waste time waiting for the official cooldown. Enter our instant simulator right now to test your dragon bond and signet with zero wait.
+            </p>
+            <a href="/" class="action-btn primary-gold" style="max-width: 340px; margin: 0 auto; text-decoration:none;">Play Instant Simulator Now →</a>
+          </div>
+
+          <!-- FAQs -->
+          <div class="codex-subhead mt-large">
+            <h3>✦ Dragonkind Game FAQs</h3>
+          </div>
+          <div class="faq-accordion">
+            <details class="faq-item" open>
+              <summary>Where can I play the official Dragonkind game?</summary>
+              <div class="faq-answer">
+                <p>The official Dragonkind interactive game is hosted at <a href="https://dragonkind.com" target="_blank" rel="noopener" style="color: var(--border-gold);">dragonkind.com</a>, launched by author Rebecca Yarros and Red Tower Books on October 1, 2026.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Do I have to wait if I burn on the official site?</summary>
+              <div class="faq-answer">
+                <p>Yes. The official site enforces an on-screen cooldown countdown (typically 4:00) before you can re-enter the Vale. Our simulator at ThreshingQuiz.com has no wait timer at all.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="/">Home</a> •
+          <a href="/signet-quiz/">Signet Quiz</a> •
+          <a href="/quadrant-quiz/">Quadrant Quiz</a> •
+          <a href="/dragonkind-game/">Dragonkind Guide</a> •
+          <a href="/dragon-codex/">Dragon Codex</a>
+        </div>
+        <p class="disclaimer-text">
+          <strong>DISCLAIMER:</strong> ThreshingQuiz.com is an independent fan resource and simulator. Not affiliated with or endorsed by Rebecca Yarros, Entangled Publishing, or dragonkind.com.
+        </p>
+        <p class="copyright-sub">ThreshingQuiz.com • Free & Open to All Cadets Worldwide</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../quizzes.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>
