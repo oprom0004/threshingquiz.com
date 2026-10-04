@@ -227,6 +227,38 @@ body {
   display: block;
 }
 
+/* Breadcrumb Navigation */
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb-nav a {
+  color: var(--border-gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px var(--gold-glow);
+}
+
+.breadcrumb-separator {
+  color: var(--border-gold-subtle);
+}
+
+.breadcrumb-current {
+  color: var(--text-muted);
+}
+
 /* Hero Section */
 .hero-badge {
   display: inline-block;

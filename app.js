@@ -433,3 +433,19 @@ function switchQuizFromResults() {
   const nextIdx = (keys.indexOf(currentQuizType) + 1) % keys.length;
   startSelectedQuiz(keys[nextIdx]);
 }
+
+/**
+ * High-Speed Instant Preloader for Seamless Inter-Page Navigation
+ */
+document.querySelectorAll('a[href^="/"]').forEach(anchor => {
+  anchor.addEventListener('mouseenter', () => {
+    const href = anchor.getAttribute('href');
+    if (href && href !== '#' && !document.querySelector(`link[rel="prefetch"][href="${href}"]`)) {
+      const prefetchLink = document.createElement('link');
+      prefetchLink.rel = 'prefetch';
+      prefetchLink.href = href;
+      document.head.appendChild(prefetchLink);
+    }
+  });
+});
+
